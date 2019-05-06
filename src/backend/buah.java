@@ -12,7 +12,7 @@ import java.sql.*;
  * @author ASUS
  */
 public class buah {
-    private int idbuah, kalori;
+    private int idbuah, kalori, count;
     private String namabuah;
     
     public buah(){
@@ -32,6 +32,25 @@ public class buah {
         buah cus = new buah();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM buah"
                 + " WHERE idbuah = '" +id+ "'");
+        
+        try{
+            while(rs.next()){
+                cus = new buah();
+                cus.setIdbuah(rs.getInt("idbuah"));
+                cus.setNamabuah(rs.getString("namabuah"));
+                cus.setKalori(rs.getInt("kalori"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return cus;
+    }
+    
+        public buah getByNama(String nama){
+        buah cus = new buah();
+        ResultSet rs = DBHelper.selectQuery("SELECT * FROM buah"
+                + " WHERE namabuah = '" +nama+ "'");
         
         try{
             while(rs.next()){
@@ -140,6 +159,14 @@ public class buah {
 
     public void setNamabuah(String namabuah) {
         this.namabuah = namabuah;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
      
 }

@@ -12,7 +12,7 @@ import java.sql.*;
  * @author ASUS
  */
 public class protein {
-    private int idprotein, kalori;
+    private int idprotein, kalori, count;
     private String namaprotein;
     
     public protein(){
@@ -32,6 +32,25 @@ public class protein {
         protein cus = new protein();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM protein"
                 + " WHERE idprotein = '" +id+ "'");
+        
+        try{
+            while(rs.next()){
+                cus = new protein();
+                cus.setIdprotein(rs.getInt("idprotein"));
+                cus.setNamaprotein(rs.getString("namaprotein"));
+                cus.setKalori(rs.getInt("kalori"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return cus;
+    }
+    
+    public protein getByNama(String nama){
+        protein cus = new protein();
+        ResultSet rs = DBHelper.selectQuery("SELECT * FROM protein"
+                + " WHERE namaprotein = '" +nama+ "'");
         
         try{
             while(rs.next()){
@@ -142,5 +161,11 @@ public class protein {
         this.namaprotein = namaprotein;
     }
 
-  
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

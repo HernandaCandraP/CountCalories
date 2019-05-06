@@ -12,7 +12,7 @@ import java.sql.*;
  * @author ASUS
  */
 public class karbohidrat {
-    private int idkarbo, kalori;
+    private int idkarbo, kalori, count;
     private String namakarbo;
     
     public karbohidrat(){
@@ -32,6 +32,25 @@ public class karbohidrat {
         karbohidrat cus = new karbohidrat();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM karbohidrat"
                 + " WHERE idkarbo = '" +id+ "'");
+        
+        try{
+            while(rs.next()){
+                cus = new karbohidrat();
+                cus.setIdkarbo(rs.getInt("idkarbo"));
+                cus.setNamakarbo(rs.getString("namakarbo"));
+                cus.setKalori(rs.getInt("kalori"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return cus;
+    }
+    
+    public karbohidrat getByNama(String nama){
+        karbohidrat cus = new karbohidrat();
+        ResultSet rs = DBHelper.selectQuery("SELECT * FROM karbohidrat"
+                + " WHERE namakarbo = '" +nama+ "'");
         
         try{
             while(rs.next()){
@@ -140,6 +159,14 @@ public class karbohidrat {
 
     public void setNamakarbo(String namakarbo) {
         this.namakarbo = namakarbo;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
     
 }
