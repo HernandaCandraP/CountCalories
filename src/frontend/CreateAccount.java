@@ -143,7 +143,6 @@ public class CreateAccount extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)
@@ -162,10 +161,11 @@ public class CreateAccount extends javax.swing.JFrame {
                                                 .addGap(7, 7, 7)
                                                 .addComponent(rdLaki))
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                                .addComponent(txtNama, javax.swing.GroupLayout.Alignment.LEADING))))))
-                            .addComponent(jLabel6))))
+                                                .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                                                .addComponent(txtNama, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtUsername))))))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel2))))
                 .addContainerGap(189, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -177,11 +177,11 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -229,6 +229,8 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void btnHaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHaveActionPerformed
         // TODO add your handling code here:
+        new Login().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnHaveActionPerformed
 
     private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
@@ -258,6 +260,9 @@ public class CreateAccount extends javax.swing.JFrame {
         c.setJeniskelamin(Gender);
         
         c.save();
+        
+        new Login().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed

@@ -72,26 +72,7 @@ public class Homes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtkarbo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtprotein = new javax.swing.JTextField();
-        cmbkarbo = new javax.swing.JComboBox<>();
-        txtbuah = new javax.swing.JTextField();
-        cmbprotein = new javax.swing.JComboBox<>();
-        cmbbuah = new javax.swing.JComboBox<>();
-        txtsayur = new javax.swing.JTextField();
-        txtsusu = new javax.swing.JTextField();
-        cmbsayur = new javax.swing.JComboBox<>();
-        cmbsusu = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        btncount = new javax.swing.JButton();
-        cbuah = new javax.swing.JTextField();
-        csayur = new javax.swing.JTextField();
-        csusu = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         ckarbo = new javax.swing.JTextField();
         cprotein = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -102,89 +83,36 @@ public class Homes extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         hbuah = new javax.swing.JTextField();
         hsayur = new javax.swing.JTextField();
+        txtbuah = new javax.swing.JTextField();
         hsusu = new javax.swing.JTextField();
+        cmbprotein = new javax.swing.JComboBox<>();
         hkarbo = new javax.swing.JTextField();
+        cmbbuah = new javax.swing.JComboBox<>();
         hprotein = new javax.swing.JTextField();
+        txtsayur = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        txtsusu = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        cmbsayur = new javax.swing.JComboBox<>();
         txttotal = new javax.swing.JLabel();
+        cmbsusu = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btncount = new javax.swing.JButton();
+        cbuah = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtkarbo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtprotein = new javax.swing.JTextField();
+        cmbkarbo = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        csayur = new javax.swing.JTextField();
+        csusu = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Karbohidrat");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Protein");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Buah");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Sayur");
-
-        txtkarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtkarbo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtkarboActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Susu");
-
-        txtprotein.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtprotein.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtproteinActionPerformed(evt);
-            }
-        });
-
-        cmbkarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbkarbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
-        cmbkarbo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbkarboActionPerformed(evt);
-            }
-        });
-
-        txtbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        cmbprotein.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbprotein.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cmbbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbbuah.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        txtsayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        txtsusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        cmbsayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbsayur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cmbsusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cmbsusu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel6.setText("Jumlah / gram");
-
-        btncount.setText("count");
-        btncount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncountActionPerformed(evt);
-            }
-        });
-
-        cbuah.setEditable(false);
-        cbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        csayur.setEditable(false);
-        csayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        csusu.setEditable(false);
-        csusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         ckarbo.setEditable(false);
         ckarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -226,8 +154,13 @@ public class Homes extends javax.swing.JFrame {
         hsayur.setEditable(false);
         hsayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
+        txtbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         hsusu.setEditable(false);
         hsusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        cmbprotein.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cmbprotein.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         hkarbo.setEditable(false);
         hkarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -237,6 +170,9 @@ public class Homes extends javax.swing.JFrame {
             }
         });
 
+        cmbbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cmbbuah.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         hprotein.setEditable(false);
         hprotein.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hprotein.addActionListener(new java.awt.event.ActionListener() {
@@ -245,107 +181,175 @@ public class Homes extends javax.swing.JFrame {
             }
         });
 
+        txtsayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Hasil");
+
+        txtsusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setText("--------------   +");
 
+        cmbsayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cmbsayur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         txttotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txttotal.setText(" ");
+
+        cmbsusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cmbsusu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel20.setText("Total");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Jumlah / gram");
+
+        btncount.setText("count");
+        btncount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncountActionPerformed(evt);
+            }
+        });
+
+        cbuah.setEditable(false);
+        cbuah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Karbohidrat");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Protein");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Buah");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Sayur");
+
+        txtkarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtkarbo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkarboActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("Susu");
+
+        txtprotein.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtprotein.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtproteinActionPerformed(evt);
+            }
+        });
+
+        cmbkarbo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cmbkarbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmbkarbo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbkarboActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel7.setText("Count Calories");
+
+        csayur.setEditable(false);
+        csayur.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        csusu.setEditable(false);
+        csusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btncount)
+                        .addGap(362, 362, 362)
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5))
                                 .addGap(46, 46, 46))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(cmbsayur, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbprotein, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbkarbo, javax.swing.GroupLayout.Alignment.LEADING, 0, 252, Short.MAX_VALUE)
+                            .addComponent(cmbkarbo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbbuah, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbsusu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cmbsusu, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btncount)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtprotein, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtsusu, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtsayur, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtbuah, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtprotein, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtsusu, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtsayur, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtbuah, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel16)))
                             .addComponent(jLabel6))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(cprotein, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(csusu, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(csayur, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cbuah, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ckarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(hprotein, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(hsusu, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(hsayur, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(hbuah, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(hkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addComponent(jLabel20)
-                                .addGap(18, 18, 18)
-                                .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel18)))
-                .addGap(63, 63, 63))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cprotein, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(csusu, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(csayur, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cbuah, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ckarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(hprotein, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(hsusu, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(hsayur, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(hbuah, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(hkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(252, 252, 252)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel12))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
                                 .addComponent(txtprotein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,47 +359,47 @@ public class Homes extends javax.swing.JFrame {
                                 .addComponent(txtsayur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtsusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cmbkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1))
                                 .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
                                     .addComponent(cmbprotein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(cmbbuah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
                                     .addComponent(cmbsayur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
                                     .addComponent(cmbsusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(ckarbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11))
                                 .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cprotein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cbuah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel14))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(csayur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(csusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel16)))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
                         .addComponent(hkarbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,27 +411,43 @@ public class Homes extends javax.swing.JFrame {
                         .addComponent(hsayur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(hsusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncount)
                     .addComponent(txttotal)
                     .addComponent(jLabel20))
-                .addContainerGap())
+                .addGap(48, 48, 48))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkarboActionPerformed
+    private void hproteinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hproteinActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_txtkarboActionPerformed
+    }//GEN-LAST:event_hproteinActionPerformed
 
     private void txtproteinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtproteinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtproteinActionPerformed
+
+    private void hkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hkarboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hkarboActionPerformed
 
     private void btncountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncountActionPerformed
         // TODO add your handling code here:
@@ -436,54 +456,56 @@ public class Homes extends javax.swing.JFrame {
         kar.setCount(Integer.parseInt(txtkarbo.getText()));
         ckarbo.setText(Integer.toString(kalkarbo));
         hkarbo.setText(Integer.toString(kalkarbo * kar.getCount()));
-        
+        int k = Integer.parseInt(ckarbo.getText());
+
         protein pro = new protein();
         int kalprotein = pro.getByNama(cmbprotein.getSelectedItem().toString()).getKalori();
         pro.setCount(Integer.parseInt(txtprotein.getText()));
         cprotein.setText(Integer.toString(kalprotein));
         hprotein.setText(Integer.toString(kalprotein * pro.getCount()));
-        
+        int p = Integer.parseInt(cprotein.getText());
+
         buah bu = new buah();
         int kalbuah = bu.getByNama(cmbbuah.getSelectedItem().toString()).getKalori();
         bu.setCount(Integer.parseInt(txtbuah.getText()));
         cbuah.setText(Integer.toString(kalbuah));
         hbuah.setText(Integer.toString(kalbuah * bu.getCount()));
-        
+        int b = Integer.parseInt(cbuah.getText());
+
         sayur sa = new sayur();
         int kalsayur = sa.getByNama(cmbsayur.getSelectedItem().toString()).getKalori();
         sa.setCount(Integer.parseInt(txtsayur.getText()));
         csayur.setText(Integer.toString(kalsayur));
         hsayur.setText(Integer.toString(kalsayur * sa.getCount()));
-        
+        int s = Integer.parseInt(csayur.getText());
+
         susu su = new susu();
         int kalsusu = su.getByNama(cmbsusu.getSelectedItem().toString()).getKalori();
         su.setCount(Integer.parseInt(txtsusu.getText()));
         csusu.setText(Integer.toString(kalsusu));
         hsusu.setText(Integer.toString(kalsusu * su.getCount()));
-        
-        txttotal.setText(hkarbo.getText() + hprotein.getText() + hbuah.getText() + hsayur.getText() + hsusu.getText());
-        
-    }//GEN-LAST:event_btncountActionPerformed
+        int susu = Integer.parseInt(csusu.getText());
 
-    private void cmbkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkarboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbkarboActionPerformed
+        int hasil= k + p + b + s + susu;
+
+        txttotal.setText(Integer.toString(hasil));
+    }//GEN-LAST:event_btncountActionPerformed
 
     private void ckarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckarboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ckarboActionPerformed
 
+    private void txtkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkarboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtkarboActionPerformed
+
+    private void cmbkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkarboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbkarboActionPerformed
+
     private void cproteinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cproteinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cproteinActionPerformed
-
-    private void hkarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hkarboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hkarboActionPerformed
-
-    private void hproteinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hproteinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hproteinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -552,6 +574,8 @@ public class Homes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtbuah;
     private javax.swing.JTextField txtkarbo;
     private javax.swing.JTextField txtprotein;
