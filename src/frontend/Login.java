@@ -5,7 +5,7 @@
  */
 package frontend;
 
-import backend.DBHelper;
+import backend.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -149,6 +149,7 @@ public class Login extends javax.swing.JFrame {
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
         try {
+            create cr = new create();
             ResultSet rs = DBHelper.selectQuery("SELECT * FROM login where username='"+txtUsername.getText() + "' and password='"+ txtPassword.getText() +"'");
             
             int baris = 0;
@@ -156,10 +157,19 @@ public class Login extends javax.swing.JFrame {
                 baris = rs.getRow();
             }
             
-            if (baris ==1) {
-                new Home().setVisible(true);
-                JOptionPane.showMessageDialog(null,"Berhasil Login");
-                dispose();
+            String admin = cr.getByNama(txtUsername.getText()).getAction();
+            
+            if (baris >= 1) {
+                if(admin.equals("admin")){
+                    new HomeAdmin().setVisible(true);
+                    JOptionPane.showMessageDialog(null,"Admin Berhasil Login");
+                    dispose();
+                }else{
+                    new Home().setVisible(true);
+                    JOptionPane.showMessageDialog(null,"Berhasil Login");
+                    dispose();                    
+                }
+
             }else {
                 JOptionPane.showMessageDialog(null,"Gagal Login");
             }

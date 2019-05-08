@@ -243,6 +243,7 @@ public class CreateAccount extends javax.swing.JFrame {
         ButtonModel gGender = btnKelamin.getSelection();
         String Gender = "";
         
+        
         if (gGender != null ) {
             if (rdLaki.isSelected()) {
                 Gender = rdLaki.getText();
@@ -258,6 +259,7 @@ public class CreateAccount extends javax.swing.JFrame {
         c.setPassword(txtPassword.getText());
         c.setUmur(Integer.parseInt(txtUmur.getText()));
         c.setJeniskelamin(Gender);
+        c.setAction("user");
         
         c.save();
         

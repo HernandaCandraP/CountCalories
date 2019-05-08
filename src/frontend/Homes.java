@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
+ * 
  * @author Muhammad Alfarizi
  */
 public class Homes extends javax.swing.JFrame {

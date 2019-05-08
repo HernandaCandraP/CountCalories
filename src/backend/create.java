@@ -13,7 +13,7 @@ import java.sql.*;
  */
 public class create {
     private int id, umur;
-    private String namalengkap, username, password, jeniskelamin;
+    private String namalengkap, username, password, jeniskelamin, action;
     
     public create(){
         
@@ -42,6 +42,29 @@ public class create {
                 cus.setPassword(rs.getString("password"));
                 cus.setUmur(rs.getInt("umur"));
                 cus.setJeniskelamin(rs.getString("jeniskelamin"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return cus;
+    }
+    
+    public create getByNama(String Username){
+        create cus = new create();
+        ResultSet rs = DBHelper.selectQuery("SELECT * FROM login"
+                + " WHERE username = '" +Username+ "'");
+        
+        try{
+            while(rs.next()){
+                cus = new create();
+                cus.setId(rs.getInt("id"));
+                cus.setNamalengkap(rs.getString("namalengkap"));
+                cus.setUsername(rs.getString("username"));
+                cus.setPassword(rs.getString("password"));
+                cus.setUmur(rs.getInt("umur"));
+                cus.setJeniskelamin(rs.getString("jeniskelamin"));
+                cus.setAction(rs.getString("action"));
             }
         }
         catch(Exception e){
@@ -104,12 +127,13 @@ public class create {
     
     public void save(){
 //        if(getById(id).getId()== 0){
-            String SQL = "INSERT INTO login(namalengkap, username, password, umur, jeniskelamin) VALUES("
+            String SQL = "INSERT INTO login(namalengkap, username, password, umur, jeniskelamin, action) VALUES("
                     +"  '" +this.namalengkap+ "',"
                     +"  '" +this.username+ "',"
                     +"  '" +this.password+ "',"
                     +"  " +this.umur+ ","
-                    +"  '" +this.jeniskelamin+ "'"
+                    +"  '" +this.jeniskelamin+ "',"
+                    +"  '" +this.action+ "'"
                     +"  )";
             this.id = DBHelper.insertQueryGetId(SQL);
 //        }
@@ -173,6 +197,14 @@ public class create {
 
     public void setJeniskelamin(String jeniskelamin) {
         this.jeniskelamin = jeniskelamin;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
     
 }
