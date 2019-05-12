@@ -5,6 +5,10 @@
  */
 package frontend;
 
+import backend.manfaat_makanan;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Muhammad Alfarizi
@@ -16,8 +20,45 @@ public class Manfaat extends javax.swing.JFrame {
      */
     public Manfaat() {
         initComponents();
+        tampilkanData();
+    }
+    
+    public void tampilkanData(){
+        String[] kolom = {"Id Manfaat", "Jenis Makanan", "Manfaat"};
+        ArrayList<manfaat_makanan> list = new manfaat_makanan().getAll();
+        Object rowData[] = new Object[3];
+        
+        tblmanfaat.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(manfaat_makanan kat : list){
+            rowData[0] = kat.getIdmanfaat();
+            rowData[1] = kat.getJenismakanan();
+            rowData[2] = kat.getManfaat();
+            
+            ((DefaultTableModel)tblmanfaat.getModel()).addRow(rowData);
+        }
     }
 
+        public void cari(String keyword){
+        String[] kolom = {"Id Manfaat", "Jenis Makanan", "Manfaat"};
+        ArrayList<manfaat_makanan> list = new manfaat_makanan().search(keyword);
+        Object rowData[] = new Object[3];
+        
+        tblmanfaat.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(manfaat_makanan kat : list){
+            rowData[0] = kat.getIdmanfaat();
+            rowData[1] = kat.getJenismakanan();
+            rowData[2] = kat.getManfaat();
+            
+            ((DefaultTableModel)tblmanfaat.getModel()).addRow(rowData);
+        }
+    }
+
+    public void FrmKategori(){
+        initComponents();
+        tampilkanData();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,8 +70,10 @@ public class Manfaat extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblKandungan = new javax.swing.JTable();
+        tblmanfaat = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        btnCari = new javax.swing.JButton();
+        txtCari = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -43,7 +86,7 @@ public class Manfaat extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 204));
 
-        tblKandungan.setModel(new javax.swing.table.DefaultTableModel(
+        tblmanfaat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -54,10 +97,23 @@ public class Manfaat extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblKandungan);
+        jScrollPane1.setViewportView(tblmanfaat);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("Back");
+
+        btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
+
+        txtCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,12 +127,22 @@ public class Manfaat extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(215, 215, 215))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCari)
+                .addGap(50, 50, 50))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap(50, Short.MAX_VALUE))
@@ -220,6 +286,15 @@ public class Manfaat extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        cari(txtCari.getText());
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void txtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCariActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,6 +331,7 @@ public class Manfaat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCari;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
@@ -266,6 +342,7 @@ public class Manfaat extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblKandungan;
+    private javax.swing.JTable tblmanfaat;
+    private javax.swing.JTextField txtCari;
     // End of variables declaration//GEN-END:variables
 }

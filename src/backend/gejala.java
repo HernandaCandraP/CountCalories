@@ -104,7 +104,7 @@ public class gejala {
         else{
             String SQL = "UPDATE gejala SET"
                     +"  jenis = '" +this.jenis+ "',"
-                    +"  gejala = '" +this.gejala+ "',"
+                    +"  gejala = '" +this.gejala+ "'"
                     +"  WHERE id = '" +this.id+ "'";
             DBHelper.executeQuery(SQL);
         }

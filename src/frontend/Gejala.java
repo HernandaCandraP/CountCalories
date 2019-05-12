@@ -5,6 +5,10 @@
  */
 package frontend;
 
+import backend.gejala;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Muhammad Alfarizi
@@ -16,6 +20,44 @@ public class Gejala extends javax.swing.JFrame {
      */
     public Gejala() {
         initComponents();
+        tampilkanData();
+    }
+    
+    public void tampilkanData(){
+        String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
+        ArrayList<gejala> list = new gejala().getAll();
+        Object rowData[] = new Object[3];
+        
+        tblgejala.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(gejala kat : list){
+            rowData[0] = kat.getId();
+            rowData[1] = kat.getJenis();
+            rowData[2] = kat.getGejala();
+            
+            ((DefaultTableModel)tblgejala.getModel()).addRow(rowData);
+        }
+    }
+    
+    public void cari(String keyword){
+        String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
+        ArrayList<gejala> list = new gejala().search(keyword);
+        Object rowData[] = new Object[3];
+        
+        tblgejala.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(gejala kat : list){
+            rowData[0] = kat.getId();
+            rowData[1] = kat.getJenis();
+            rowData[2] = kat.getGejala();
+            
+            ((DefaultTableModel)tblgejala.getModel()).addRow(rowData);
+        }
+    }
+    
+        public void FrmKategori(){
+        initComponents();
+        tampilkanData();
     }
 
     /**
@@ -29,6 +71,10 @@ public class Gejala extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblgejala = new javax.swing.JTable();
+        btnCari = new javax.swing.JButton();
+        txtCari = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -45,21 +91,64 @@ public class Gejala extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/injury.png"))); // NOI18N
         jLabel1.setText("Gejala");
 
+        tblgejala.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblgejala);
+
+        btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
+
+        txtCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCariActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addComponent(jLabel1)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCari)
+                .addGap(131, 131, 131))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
@@ -202,6 +291,15 @@ public class Gejala extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        cari(txtCari.getText());
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void txtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCariActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,6 +336,7 @@ public class Gejala extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCari;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
@@ -247,5 +346,8 @@ public class Gejala extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblgejala;
+    private javax.swing.JTextField txtCari;
     // End of variables declaration//GEN-END:variables
 }

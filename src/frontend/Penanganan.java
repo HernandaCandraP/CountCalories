@@ -21,51 +21,45 @@ public class Penanganan extends javax.swing.JFrame {
     public Penanganan() {
         initComponents();
         tampilkanData();
-        kosongkanForm();
-    }
-    
-    public void kosongkanForm(){
-        txtIdsusu.setText("0");
-        txtsusu.setText("");
-        txtkalori.setText("");
     }
     
     public void tampilkanData(){
-        String[] kolom = {"ID Susu", "Nama Susu", "Kalori"};
-        ArrayList<susu> list = new susu().getAll();
-        Object rowData[] = new Object[3];
+        String[] kolom = {"ID Penanganan", "Jenis Sakit", "Jenis Training", "Training"};
+        ArrayList<penanganan> list = new penanganan().getAll();
+        Object rowData[] = new Object[4];
         
-        tblsusu.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        tblpenanganan.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
-        for(susu kat : list){
-            rowData[0] = kat.getIdsusu();
-            rowData[1] = kat.getNamasusu();
-            rowData[2] = kat.getKalori();
+        for(penanganan kat : list){
+            rowData[0] = kat.getIdpenanganan();
+            rowData[1] = kat.getJenissakit();
+            rowData[2] = kat.getJenistraining();
+            rowData[3] = kat.getTraining();
             
-            ((DefaultTableModel)tblsusu.getModel()).addRow(rowData);
+            ((DefaultTableModel)tblpenanganan.getModel()).addRow(rowData);
         }
     }
     
     public void cari(String keyword){
-        String[] kolom = {"ID Susu", "Nama Susu", "Kalori"};
-        ArrayList<susu> list = new susu().search(keyword);
-        Object rowData[] = new Object[3];
+        String[] kolom = {"ID Penanganan", "Jenis Sakit", "Jenis Training", "Training"};
+        ArrayList<penanganan> list = new penanganan().search(keyword);
+        Object rowData[] = new Object[4];
         
-        tblsusu.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        tblpenanganan.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
-        for(susu kat : list){
-            rowData[0] = kat.getIdsusu();
-            rowData[1] = kat.getNamasusu();
-            rowData[2] = kat.getKalori();
+        for(penanganan kat : list){
+            rowData[0] = kat.getIdpenanganan();
+            rowData[1] = kat.getJenissakit();
+            rowData[2] = kat.getJenistraining();
+            rowData[3] = kat.getTraining();
             
-            ((DefaultTableModel)tblsusu.getModel()).addRow(rowData);
+            ((DefaultTableModel)tblpenanganan.getModel()).addRow(rowData);
         }
     }
 
     public void FrmKategori(){
         initComponents();
         tampilkanData();
-        kosongkanForm();
     }
 
     /**
@@ -80,7 +74,7 @@ public class Penanganan extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPenanganan = new javax.swing.JTable();
+        tblpenanganan = new javax.swing.JTable();
         txtcari = new javax.swing.JTextField();
         btnCari = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -99,7 +93,7 @@ public class Penanganan extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/solution.png"))); // NOI18N
         jLabel1.setText("Penanganan");
 
-        tblPenanganan.setModel(new javax.swing.table.DefaultTableModel(
+        tblpenanganan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -110,7 +104,7 @@ public class Penanganan extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblPenanganan);
+        jScrollPane1.setViewportView(tblpenanganan);
 
         txtcari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,7 +345,7 @@ public class Penanganan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblPenanganan;
+    private javax.swing.JTable tblpenanganan;
     private javax.swing.JTextField txtcari;
     // End of variables declaration//GEN-END:variables
 }
