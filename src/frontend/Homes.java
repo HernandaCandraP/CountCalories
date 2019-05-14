@@ -112,6 +112,7 @@ public class Homes extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         csayur = new javax.swing.JTextField();
         csusu = new javax.swing.JTextField();
+        txtket = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -313,6 +314,10 @@ public class Homes extends javax.swing.JFrame {
         csusu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(csusu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 62, -1));
 
+        txtket.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtket.setForeground(new java.awt.Color(0, 0, 153));
+        jPanel1.add(txtket, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 730, 30));
+
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -439,6 +444,13 @@ public class Homes extends javax.swing.JFrame {
         int hasil= k + p + b + s + susu;
 
         txttotal.setText(Integer.toString(hasil));
+        if(hasil >2000){
+            txtket.setText("Total Kalori Yang Anda Konsumsi Lebih Besar Dari jumlah rata rata ");
+        }else if(hasil < 1000){
+            txtket.setText("Total Kalori Yang Anda Konsumsi Sesuai Dari jumlah rata rata ");
+        }else{
+            txtket.setText("Total Kalori Yang Anda Konsumsi Kurang Dari jumlah rata rata ");
+        }
     }//GEN-LAST:event_btncountActionPerformed
 
     private void ckarboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckarboActionPerformed
@@ -565,6 +577,7 @@ public class Homes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtbuah;
     private javax.swing.JTextField txtkarbo;
+    private javax.swing.JLabel txtket;
     private javax.swing.JTextField txtprotein;
     private javax.swing.JTextField txtsayur;
     private javax.swing.JTextField txtsusu;

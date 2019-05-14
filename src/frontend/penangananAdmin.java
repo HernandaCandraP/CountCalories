@@ -6,6 +6,8 @@
 package frontend;
 import backend.*;
 import java.util.ArrayList;
+import javax.swing.ButtonModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -21,8 +23,8 @@ public class penangananAdmin extends javax.swing.JFrame {
     
     public void kosongkanForm(){
         txtIdpenanganan.setText("0");
-        txtsakit.setText("");
-        txtjenistraining.setText("");
+        groupGejala.clearSelection();
+        groupTraining.clearSelection();
         txttraining.setText("");
     }
     
@@ -76,12 +78,12 @@ public class penangananAdmin extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        groupGejala = new javax.swing.ButtonGroup();
+        groupTraining = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtIdpenanganan = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtsakit = new javax.swing.JTextField();
-        txtjenistraining = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnSimpan = new javax.swing.JButton();
         btnTambahBaru = new javax.swing.JButton();
@@ -93,6 +95,11 @@ public class penangananAdmin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txttraining = new javax.swing.JTextField();
+        rdKekurangan = new javax.swing.JRadioButton();
+        rdKelebihan = new javax.swing.JRadioButton();
+        rdringan = new javax.swing.JRadioButton();
+        rdsedang = new javax.swing.JRadioButton();
+        rdberat = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -134,22 +141,6 @@ public class penangananAdmin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Jenis Sakit");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
-
-        txtsakit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtsakit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsakitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtsakit, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 249, -1));
-
-        txtjenistraining.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtjenistraining.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtjenistrainingActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtjenistraining, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 250, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Jenis Training");
@@ -241,6 +232,46 @@ public class penangananAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(txttraining, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 250, -1));
 
+        groupGejala.add(rdKekurangan);
+        rdKekurangan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rdKekurangan.setText("Kekurangan");
+        rdKekurangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdKekuranganActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rdKekurangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+
+        groupGejala.add(rdKelebihan);
+        rdKelebihan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rdKelebihan.setText("Kelebihan");
+        rdKelebihan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdKelebihanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rdKelebihan, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
+
+        groupTraining.add(rdringan);
+        rdringan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rdringan.setText("Ringan");
+        rdringan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdringanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rdringan, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+
+        groupTraining.add(rdsedang);
+        rdsedang.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rdsedang.setText("Sedang");
+        jPanel1.add(rdsedang, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
+
+        groupTraining.add(rdberat);
+        rdberat.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        rdberat.setText("Berat");
+        jPanel1.add(rdberat, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
+
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -309,19 +340,42 @@ public class penangananAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdpenangananActionPerformed
 
-    private void txtsakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsakitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsakitActionPerformed
-
-    private void txtjenistrainingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtjenistrainingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtjenistrainingActionPerformed
-
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
         penanganan kat = new penanganan();
-        kat.setJenissakit(txtsakit.getText());
-        kat.setJenistraining(txtjenistraining.getText());
+        
+        ButtonModel gGejala = groupGejala.getSelection();
+        String gejala = "";
+        
+        
+        if (gGejala != null ) {
+            if (rdKelebihan.isSelected()) {
+                gejala = rdKelebihan.getText();
+            } else if (rdKekurangan.isSelected()) {
+                gejala = rdKekurangan.getText();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Jenis gejala belum diisi!! ");
+        }
+        
+        ButtonModel gTraining = groupTraining.getSelection();
+        String training = "";
+        
+        
+        if (gTraining != null ) {
+            if (rdsedang.isSelected()) {
+                training = rdsedang.getText();
+            } else if (rdringan.isSelected()) {
+                training = rdringan.getText();
+            } else if (rdberat.isSelected()) {
+                training = rdberat.getText();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Jenis training belum diisi!! ");
+        }
+        
+        kat.setJenissakit(gejala);
+        kat.setJenistraining(training);
         kat.setTraining(txttraining.getText());
         kat.setIdpenanganan(Integer.parseInt(txtIdpenanganan.getText()));
         kat.save();
@@ -360,8 +414,21 @@ public class penangananAdmin extends javax.swing.JFrame {
         int row = tblpenanganan.getSelectedRow();
         
         txtIdpenanganan.setText(model.getValueAt(row, 0).toString());
-        txtsakit.setText(model.getValueAt(row, 1).toString());
-        txtjenistraining.setText(model.getValueAt(row, 2).toString());
+        String sakit = (model.getValueAt(row, 1).toString());
+            if(sakit.equals(rdKekurangan.getActionCommand())){
+                rdKekurangan.setSelected(true);
+            } else {
+                rdKelebihan.setSelected(true);
+            }
+            
+        String training = (model.getValueAt(row, 2).toString());
+            if(training.equals(rdringan.getActionCommand())){
+                rdringan.setSelected(true);
+            }else if(training.equals(rdsedang.getActionCommand())){
+                rdsedang.setSelected(true);
+            }else {
+                rdberat.setSelected(true);
+            }
         txttraining.setText(model.getValueAt(row, 3).toString());
     }//GEN-LAST:event_tblpenangananMouseClicked
 
@@ -392,6 +459,18 @@ public class penangananAdmin extends javax.swing.JFrame {
         new manfaatAdmin().setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void rdKekuranganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdKekuranganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdKekuranganActionPerformed
+
+    private void rdKelebihanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdKelebihanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdKelebihanActionPerformed
+
+    private void rdringanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdringanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdringanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -437,6 +516,8 @@ public class penangananAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnTambahBaru;
+    private javax.swing.ButtonGroup groupGejala;
+    private javax.swing.ButtonGroup groupTraining;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -452,11 +533,14 @@ public class penangananAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JRadioButton rdKekurangan;
+    private javax.swing.JRadioButton rdKelebihan;
+    private javax.swing.JRadioButton rdberat;
+    private javax.swing.JRadioButton rdringan;
+    private javax.swing.JRadioButton rdsedang;
     private javax.swing.JTable tblpenanganan;
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtIdpenanganan;
-    private javax.swing.JTextField txtjenistraining;
-    private javax.swing.JTextField txtsakit;
     private javax.swing.JTextField txttraining;
     // End of variables declaration//GEN-END:variables
 }

@@ -70,13 +70,117 @@ public class penanganan {
         return List;
     }
     
+    public ArrayList<penanganan> getAllkelebihan(){
+        ArrayList<penanganan> List = new ArrayList();
+        String keyword = null;
+        
+        String sql = "SELECT * FROM penanganan where jenissakit = 'kelebihan' ORDER BY jenistraining ASC";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                penanganan cus = new penanganan();
+                cus.setIdpenanganan(rs.getInt("idpenanganan"));
+                cus.setJenissakit(rs.getString("jenissakit"));
+                cus.setJenistraining(rs.getString("jenistraining"));
+                cus.setTraining(rs.getString("training"));
+                
+                List.add(cus);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
+    public ArrayList<penanganan> getAllkekurangan(){
+        ArrayList<penanganan> List = new ArrayList();
+        String keyword = null;
+        
+        String sql = "SELECT * FROM penanganan where jenissakit = 'kekurangan' ORDER BY jenistraining ASC";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                penanganan cus = new penanganan();
+                cus.setIdpenanganan(rs.getInt("idpenanganan"));
+                cus.setJenissakit(rs.getString("jenissakit"));
+                cus.setJenistraining(rs.getString("jenistraining"));
+                cus.setTraining(rs.getString("training"));
+                
+                List.add(cus);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
     public ArrayList<penanganan> search(String keyword){
         ArrayList<penanganan> List = new ArrayList();
         
         String sql = "SELECT * FROM penanganan WHERE"
-                + " jenissakit LIKE '%" + keyword + "%'"
-                + " OR jenistraining LIKE '%" +keyword+ "%' "
-                + " OR training LIKE '%" +keyword+ "%' ";
+                + " (jenistraining LIKE '%" +keyword+ "%' "
+                + " OR training LIKE '%" +keyword+ "%'"
+                + " OR jenissakit LIKE '%" +keyword+ "%')";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                penanganan kat = new penanganan();
+                kat.setIdpenanganan(rs.getInt("idpenanganan"));
+                kat.setJenissakit(rs.getString("jenissakit"));
+                kat.setJenistraining(rs.getString("jenistraining"));
+                kat.setTraining(rs.getString("training"));
+                
+                List.add(kat);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
+    public ArrayList<penanganan> searchkelebihan(String keyword){
+        ArrayList<penanganan> List = new ArrayList();
+        
+        String sql = "SELECT * FROM penanganan WHERE"
+                + " (jenistraining LIKE '%" +keyword+ "%' "
+                + " OR training LIKE '%" +keyword+ "%') AND"
+                + " (jenissakit = 'kelebihan') Order By jenistraining ASC";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                penanganan kat = new penanganan();
+                kat.setIdpenanganan(rs.getInt("idpenanganan"));
+                kat.setJenissakit(rs.getString("jenissakit"));
+                kat.setJenistraining(rs.getString("jenistraining"));
+                kat.setTraining(rs.getString("training"));
+                
+                List.add(kat);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }    
+    
+    public ArrayList<penanganan> searchkekurangan(String keyword){
+        ArrayList<penanganan> List = new ArrayList();
+        
+        String sql = "SELECT * FROM penanganan WHERE"
+                + " (jenistraining LIKE '%" +keyword+ "%' "
+                + " OR training LIKE '%" +keyword+ "%') AND"
+                + " (jenissakit = 'kekurangan') Order By jenistraining ASC";
         
         ResultSet rs = DBHelper.selectQuery(sql);
         

@@ -21,11 +21,12 @@ public class Gejala extends javax.swing.JFrame {
     public Gejala() {
         initComponents();
         tampilkanData();
+        tampilkanDatak();
     }
     
     public void tampilkanData(){
         String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
-        ArrayList<gejala> list = new gejala().getAll();
+        ArrayList<gejala> list = new gejala().getAllkelebihan();
         Object rowData[] = new Object[3];
         
         tblgejala.setModel(new DefaultTableModel(new Object[][] {}, kolom));
@@ -36,12 +37,28 @@ public class Gejala extends javax.swing.JFrame {
             rowData[2] = kat.getGejala();
             
             ((DefaultTableModel)tblgejala.getModel()).addRow(rowData);
+        }
+    }
+    
+        public void tampilkanDatak(){
+        String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
+        ArrayList<gejala> list = new gejala().getAllkekurangan();
+        Object rowData[] = new Object[3];
+        
+        tblkekurangan.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(gejala kat : list){
+            rowData[0] = kat.getId();
+            rowData[1] = kat.getJenis();
+            rowData[2] = kat.getGejala();
+            
+            ((DefaultTableModel)tblkekurangan.getModel()).addRow(rowData);
         }
     }
     
     public void cari(String keyword){
         String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
-        ArrayList<gejala> list = new gejala().search(keyword);
+        ArrayList<gejala> list = new gejala().searchkelebihan(keyword);
         Object rowData[] = new Object[3];
         
         tblgejala.setModel(new DefaultTableModel(new Object[][] {}, kolom));
@@ -55,9 +72,28 @@ public class Gejala extends javax.swing.JFrame {
         }
     }
     
-        public void FrmKategori(){
+    public void carikekurangan(String keyword){
+        String[] kolom = {"ID Gejala", "Jenis Gejala", "Gejala"};
+        ArrayList<gejala> list = new gejala().searchkekurangan(keyword);
+        Object rowData[] = new Object[3];
+        
+        tblkekurangan.setModel(new DefaultTableModel(new Object[][] {}, kolom));
+        
+        for(gejala kat : list){
+            rowData[0] = kat.getId();
+            rowData[1] = kat.getJenis();
+            rowData[2] = kat.getGejala();
+            
+            ((DefaultTableModel)tblkekurangan.getModel()).addRow(rowData);
+        }
+    }
+    
+    
+    
+    public void FrmKategori(){
         initComponents();
         tampilkanData();
+        tampilkanDatak();
     }
 
     /**
@@ -76,6 +112,12 @@ public class Gejala extends javax.swing.JFrame {
         tblgejala = new javax.swing.JTable();
         btnCari = new javax.swing.JButton();
         txtCari = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblkekurangan = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        txtkekurangan = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -109,7 +151,7 @@ public class Gejala extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblgejala);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 193, 750, 410));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 750, 180));
 
         btnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Text preview.png"))); // NOI18N
         btnCari.setText("Cari");
@@ -118,14 +160,53 @@ public class Gejala extends javax.swing.JFrame {
                 btnCariActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, -1, -1));
+        jPanel1.add(btnCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
 
         txtCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCariActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 203, -1));
+        jPanel1.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 203, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Kekurangan Kalori");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+
+        tblkekurangan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tblkekurangan);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 417, 750, 170));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Kelebihan Kalori");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Text preview.png"))); // NOI18N
+        jButton1.setText("Cari");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, -1, -1));
+
+        txtkekurangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtkekuranganActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtkekurangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 190, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -197,7 +278,7 @@ public class Gejala extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -243,6 +324,15 @@ public class Gejala extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCariActionPerformed
 
+    private void txtkekuranganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkekuranganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtkekuranganActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        carikekurangan(txtkekurangan.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,8 +370,11 @@ public class Gejala extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -290,8 +383,11 @@ public class Gejala extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTable tblgejala;
+    private javax.swing.JTable tblkekurangan;
     private javax.swing.JTextField txtCari;
+    private javax.swing.JTextField txtkekurangan;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,6 +44,30 @@ public class gejala {
     }
     
     
+    public ArrayList<gejala> getAllkelebihan(){
+        ArrayList<gejala> List = new ArrayList();
+        String keyword = null;
+        
+        String sql = "SELECT * FROM gejala where jenis = 'kelebihan'";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                gejala cus = new gejala();
+                cus.setId(rs.getInt("id"));
+                cus.setJenis(rs.getString("jenis"));
+                cus.setGejala(rs.getString("gejala"));
+                
+                List.add(cus);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
     public ArrayList<gejala> getAll(){
         ArrayList<gejala> List = new ArrayList();
         String keyword = null;
@@ -68,12 +92,83 @@ public class gejala {
         return List;
     }
     
+        public ArrayList<gejala> getAllkekurangan(){
+        ArrayList<gejala> List = new ArrayList();
+        String keyword = null;
+        
+        String sql = "SELECT * FROM gejala where jenis = 'kekurangan'";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                gejala cus = new gejala();
+                cus.setId(rs.getInt("id"));
+                cus.setJenis(rs.getString("jenis"));
+                cus.setGejala(rs.getString("gejala"));
+                
+                List.add(cus);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
     public ArrayList<gejala> search(String keyword){
         ArrayList<gejala> List = new ArrayList();
-        
         String sql = "SELECT * FROM gejala WHERE"
-                + " jenis LIKE '%" + keyword + "%'"
-                + " OR gejala LIKE '%" +keyword+ "%' ";
+                + " (gejala LIKE '%" +keyword+ "%' OR"
+                + "  jenis LIKE '%" +keyword+ "%')";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                gejala kat = new gejala();
+                kat.setId(rs.getInt("id"));
+                kat.setJenis(rs.getString("jenis"));
+                kat.setGejala(rs.getString("gejala"));
+                
+                List.add(kat);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
+    public ArrayList<gejala> searchkelebihan(String keyword){
+        ArrayList<gejala> List = new ArrayList();
+        String sql = "SELECT * FROM gejala WHERE"
+                + " (gejala LIKE '%" +keyword+ "%' ) AND"
+                + " (jenis = 'kelebihan')";
+        
+        ResultSet rs = DBHelper.selectQuery(sql);
+        
+        try{
+            while(rs.next()){
+                gejala kat = new gejala();
+                kat.setId(rs.getInt("id"));
+                kat.setJenis(rs.getString("jenis"));
+                kat.setGejala(rs.getString("gejala"));
+                
+                List.add(kat);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return List;
+    }
+    
+    public ArrayList<gejala> searchkekurangan(String keyword){
+        ArrayList<gejala> List = new ArrayList();
+        String sql = "SELECT * FROM gejala WHERE"
+                + " (gejala LIKE '%" +keyword+ "%' ) AND"
+                + " (jenis = 'kekurangan')";
         
         ResultSet rs = DBHelper.selectQuery(sql);
         

@@ -140,11 +140,11 @@ public class gejalaAdmin extends javax.swing.JFrame {
                 txtgejalaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtgejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 194, 203, -1));
+        jPanel1.add(txtgejala, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 203, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Gejala");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 197, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gtk-save-as.png"))); // NOI18N
         btnSimpan.setText("Simpan");
